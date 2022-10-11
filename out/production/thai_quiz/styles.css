@@ -1,0 +1,37 @@
+header {
+    font-size: 30px;
+}
+
+body {
+    background: #202020;
+    color: white;
+}
+
+#quiz-section {
+    position: absolute;
+    background: whitesmoke;
+    color: black;
+    height: 400px;
+    width: 800px;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#quiz-section button {
+    margin-bottom: 20px;
+}
+
+#letterDisplay {
+    font-size: 150px;
+    margin: 0;
+}
+
+#answerDisplay {
+    font-size: 40px;
+}

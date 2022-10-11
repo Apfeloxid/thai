@@ -1,0 +1,56 @@
+header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: #202020;
+    color: white;
+}
+
+#gamemode-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#gamemode-section button {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+#quiz-section {
+    position: absolute;
+    background: whitesmoke;
+    color: black;
+    height: 500px;
+    width: 1000px;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#quiz-section button {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+#letterDisplay {
+    font-size: 150px;
+    margin: 0;
+}
+
+#answerDisplay {
+    font-size: 40px;
+}
