@@ -19,7 +19,7 @@ let letters1 = [
     {
         thai: 'ม',
         latin: 'm',
-        isVowel: false
+        isVowel: false,
     },
     {
         thai: 'น',
@@ -29,6 +29,7 @@ let letters1 = [
     {
         thai: 'า',
         latin: "a",
+        note: "long sound",
         isVowel: true
     },
     {
@@ -39,6 +40,7 @@ let letters1 = [
     {
         thai: 'ย',
         latin: "y",
+        note: "At end of syllable: n",
         isVowel: false
     },
     {
@@ -54,76 +56,91 @@ let letters1 = [
     {
         thai: 'ด',
         latin: 'd',
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
         thai: 'บ',
         latin: 'b',
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: '◌ี',
         latin: 'i',
+        note: "long sound",
         isVowel: true
     },
     {
         thai: 'ช',
         latin: "ch",
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
         thai: 'ซ',
         latin: "s",
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
         thai: '◌ะ | ◌ั◌',
         latin: "a",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: '◌ิ',
         latin: "i",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: 'พ',
         latin: "ph",
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: 'ฟ',
         latin: "f",
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: '◌ุ',
         latin: "u",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: '◌ู',
         latin: "u",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: 'ค',
         latin: "kh",
+        note: "At end of syllable: k",
         isVowel: false
     },
     {
         thai: "◌ึ",
         latin: "ue",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "◌ื",
         latin: "ue",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "ท",
         latin: "th",
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
@@ -134,31 +151,37 @@ let letters1 = [
     {
         thai: "เ◌",
         latin: "e",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "เ◌ะ | เ◌็◌",
         latin: "e",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "ร",
         latin: "r",
+        note: "At end of syllable: n",
         isVowel: false
     },
     {
         thai: "ล",
         latin: "l",
+        note: "At end of syllable: n",
         isVowel: false
     },
     {
         thai: "แ◌ะ | แ◌็◌",
         latin: "ae",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "แ◌",
         latin: "ae",
+        note: "long sound",
         isVowel: true
     }
 ]
@@ -166,6 +189,7 @@ let letters2 = [
     {
         thai: "จ",
         latin: "ch",
+        note: "At end of syllable: t",
         isVowel: false,
     },
     {
@@ -181,91 +205,103 @@ let letters2 = [
     {
         thai: "โ◌ะ",
         latin: "o",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "โ◌",
         latin: "o",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "เ◌า",
-        latin: "au",
+        latin: "ao",
+        note: "short sound",
         isVowel: true
     },
     {
-        thai: "ไ◌",
+        thai: "ไ◌ | ใ◌",
         latin: "ai",
-        isVowel: true
-    },
-    {
-        thai: "ไ◌",
-        latin: "ai",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "ข",
         latin: "kh",
+        note: "At end of syllable: k",
         isVowel: false
     },
     {
         thai: "ฉ",
         latin: "ch",
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
         thai: "เ◌ียะ",
         latin: "ia",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "เ◌ีย",
         latin: "ia",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "ศ",
         latin: "s",
+        note: "At end of syllable: t",
         isVowel: true
     },
     {
         thai: "ษ",
         latin: "s",
+        note: "At end of syllable: t",
         isVowel: true
     },
     {
         thai: "ส",
         latin: "s",
+        note: "At end of syllable: t",
         isVowel: true
     },
     {
         thai: "เ◌อะ",
         latin: "oe",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "เ◌อ | เ◌ิ◌",
         latin: "oe",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "ผ",
         latin: "ph",
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: "ฝ",
         latin: "f",
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: "เ◌ือะ",
         latin: "uea",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "เ◌ือ",
         latin: "uea",
+        note: "long sound",
         isVowel: true
     },
     {
@@ -276,21 +312,25 @@ let letters2 = [
     {
         thai: "◌ัวะ",
         latin: "ua",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "◌ัว",
         latin: "ua",
+        note: "long sound",
         isVowel: true
     },
     {
         thai: "ภ",
         latin: "ph",
+        note: "At end of syllable: p",
         isVowel: false
     },
     {
         thai: "ธ",
         latin: "th",
+        note: "At end of syllable: t",
         isVowel: false
     },
     {
@@ -301,21 +341,25 @@ let letters2 = [
     {
         thai: "ญ",
         latin: "y",
+        note: "At end of syllable: n",
         isVowel: false
     },
     {
         thai: "ำ",
         latin: "am",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "เ◌าะ",
         latin: "o",
+        note: "short sound",
         isVowel: true
     },
     {
         thai: "◌อ",
         latin: "o",
+        note: "long sound",
         isVowel: true
     }
 ]
@@ -425,8 +469,10 @@ function startQuiz(vocab) {
 function showNext() {
     let letterDisplay = document.querySelector('#letterDisplay');
     let answerDisplay = document.querySelector('#answerDisplay');
+    let noteDisplay = document.querySelector('#noteDisplay')
 
     answerDisplay.innerText = '';
+    noteDisplay.innerText = '';
     buttonNext.style.display="None"
 
     if (currentRound >= currentVocab.length) {
@@ -442,6 +488,10 @@ function showNext() {
 function showAnswer() {
     let answerDisplay = document.querySelector('#answerDisplay');
     answerDisplay.innerText = currentVocab[currentRound].latin
+    if (currentVocab[currentRound].hasOwnProperty("note")) {
+        let noteDisplay = document.querySelector("#noteDisplay")
+        noteDisplay.innerText = " (" + currentVocab[currentRound].note + ")"
+    }
     buttonShow.style.display="None";
     buttonNext.style.display="Inline";
     currentRound++;
