@@ -78,16 +78,22 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+    header {
+        font-size: 20px;
+    }
+
     #quiz-section {
         height: 400px;
         width: 100%;
         left: 0;
         transform: translate(0, -30%);
     }
+    
     #gamemode-section button {
         margin-top: 5px;
         margin-bottom: 5px;
         margin-right: 5px;
+        padding: 7px;
     }
 
     #letterDisplay {
