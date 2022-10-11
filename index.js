@@ -2,6 +2,8 @@ let buttonStart1 = document.querySelector(`#buttonStart1`);
 buttonStart1.addEventListener("click", () => startQuiz(letters1));
 let buttonStart2 = document.querySelector(`#buttonStart2`);
 buttonStart2.addEventListener("click", () => startQuiz(letters2));
+let buttonStart3 = document.querySelector(`#buttonStart3`);
+buttonStart3.addEventListener("click", () => startQuiz(letters3));
 let buttonProvinces = document.querySelector(`#buttonProvinces`);
 buttonProvinces.addEventListener("click", () => startQuiz(provinces));
 let buttonConsonants = document.querySelector(`#buttonConsonants`);
@@ -9,7 +11,7 @@ buttonConsonants.addEventListener("click", () => prepareConsonantQuiz())
 let buttonVowels = document.querySelector("#buttonVowels");
 buttonVowels.addEventListener("click", () => prepareVowelQuiz())
 let buttonAllLetters = document.querySelector("#buttonAll");
-buttonAllLetters.addEventListener("click", () => startQuiz(letters1.concat(letters2)))
+buttonAllLetters.addEventListener("click", () => startQuiz(letters1.concat(letters2).concat(letters3)))
 let buttonShow = document.querySelector("#buttonShow");
 buttonShow.addEventListener('click', () => showAnswer())
 let buttonNext = document.querySelector("#buttonNext");
@@ -363,6 +365,80 @@ let letters2 = [
         isVowel: true
     }
 ]
+let letters3 = [
+    {
+        thai: "ถ",
+        latin: "th",
+        note: "At endo of syllable: t",
+        isVowel: false
+    },
+    {
+        thai: "ฐ",
+        latin: "th",
+        note: "At end of syllable: t",
+        isVowel: false
+    },
+    {
+        thai: "ฎ",
+        latin: "d",
+        note: "At end of syllable: t",
+        isVowel: false
+    },
+    {
+        thai: "ฏ",
+        latin: "t",
+        isVowel: false
+    },
+    {
+        thai: "ฑ",
+        latin: "th or d",
+        note: "At end of syllable: t",
+        isVowel: false
+    },
+    {
+        thai: "ฒ",
+        latin: "th",
+        note: "At end of syllable: t",
+        isVowel: false,
+    },
+    {
+        thai: "ฬ",
+        latin: "l",
+        note: "At end of syllable: n",
+        isVowel: false
+    },
+    {
+        thai: "ฆ",
+        latin: "kh",
+        note: "At end of syllable: k",
+        isVowel: false
+    },
+    {
+        thai: "ฤ",
+        latin: "rue, ri or roe",
+        isVowel: true,
+        note: "short sound"
+    },
+    {
+        thai: "ฤๅ",
+        latin: "rue",
+        isVowel: true,
+        note: "long sound"
+    },
+    {
+        thai: "ฦ",
+        latin: "lue",
+        isVowel: false,
+        note: "short sound"
+    },
+    {
+        thai: "ฦๅ",
+        latin: "lue",
+        isVowel: false,
+        note: "long sound"
+    }
+]
+
 let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bangkok (Krung Thep Maha Nakhon)"},
     { thai: "อำนาจเจริญ", latin: "Amnatcharoen"},
     { thai: "อ่างทอง", latin: "Ang Thong"},
@@ -449,12 +525,14 @@ let currentVocab = null
 function prepareConsonantQuiz() {
     let vocabs = letters1.filter(vocab => !vocab.isVowel);
     vocabs = vocabs.concat(letters2.filter(vocab => !vocab.isVowel));
+    vocabs = vocabs.concat(letters3.filter(vocab => !vocab.isVowel));
     startQuiz(vocabs)
 }
 
 function prepareVowelQuiz() {
     let vocabs = letters1.filter(vocab => vocab.isVowel);
     vocabs = vocabs.concat(letters2.filter(vocab => vocab.isVowel));
+    vocabs = vocabs.concat(letters3.filter(vocab => vocab.isVowel));
     startQuiz(vocabs)
 }
 
