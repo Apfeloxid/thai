@@ -430,17 +430,49 @@ let letters3 = [
     {
         thai: "ฦ",
         latin: "lue",
-        isVowel: false,
+        isVowel: true,
         note: "short sound"
     },
     {
         thai: "ฦๅ",
         latin: "lue",
-        isVowel: false,
+        isVowel: true,
         note: "long sound"
     }
 ]
-let provincesAbb = [{thai: "ชม", latin: "Chiang Mai"}, {thai: "นน", latin: "Nan"}, {thai: "พย", latin: "Phayao"}, {thai: "พร", latin: "Phrae"}, {thai: "มส", latin: "Mae Hong Son"}, {thai: "ลป", latin: "Lampang"}, {thai: "ลพ", latin: "Lamphun"}, {thai: "อต", latin: "Uttaradit"}, {thai: "กส", latin: "Kalasin"}, {thai: "ขก", latin: "Khon Kaen"}, {thai: "ชย", latin: "Chaiyaphum"}, {thai: "นพ", latin: "Nakhon Phanom"}, {thai: "นม", latin: "Nakhon Ratchasima"}, {thai: "บก", latin: "Bueng Kan"}, {thai: "บร", latin: "Buri Ram"}, {thai: "มค", latin: "Maha Sarakham"}, {thai: "มห", latin: "Mukdahan"}, {thai: "ยส", latin: "Yasothon"}, {thai: "รอ", latin: "Roi Et"}, {thai: "ลย", latin: "Loei"}, {thai: "ศก", latin: "Si Sa Ket"}, {thai: "สน", latin: "Sakon Nakhon"}, {thai: "สร", latin: "Surin"}, {thai: "นค", latin: "Nong Khai"}, {thai: "นภ", latin: "Nong Bua Lam Phu"}, {thai: "อด", latin: "Udon Thani"}, {thai: "อบ", latin: "Ubon Ratchathani"}, {thai: "อจ", latin: "Amnat Charoen"}, {thai: "กท", latin: "Bangkok"}, {thai: "กพ", latin: "Kamphaeng Phet"}, {thai: "ชน", latin: "Chai Nat"}, {thai: "นย", latin: "Nakhon Nayok"}, {thai: "นฐ", latin: "Nakhon Pathom"}, {thai: "นว", latin: "Nakhon Sawan"}, {thai: "นบ", latin: "Nonthaburi"}, {thai: "ปท", latin: "Pathum Thani"}, {thai: "อย", latin: "Phra Nakhon Si Ayutthaya"}, {thai: "พจ", latin: "Phichit"}, {thai: "พล", latin: "Phitsanulok"}, {thai: "พช", latin: "Phetchabun"}, {thai: "ลบ", latin: "Lop Buri"}, {thai: "สป", latin: "Samut Prakan"}, {thai: "สส", latin: "Samut Songkhram"}, {thai: "สค", latin: "Samut Sakhon"}, {thai: "สบ", latin: "Saraburi"}, {thai: "สห", latin: "Sing Buri"}, {thai: "สท", latin: "Sukhothai"}, {thai: "สพ", latin: "Suphan Buri"}, {thai: "อท", latin: "Ang Thong"}, {thai: "อน", latin: "Uthai Thani"}, {thai: "จบ", latin: "Chanthaburi"}, {thai: "ฉช", latin: "Chachoengsao"}, {thai: "ชบ", latin: "Chon Buri"}, {thai: "ตร", latin: "Trat"}, {thai: "ปจ", latin: "Prachin Buri"}, {thai: "รย", latin: "Rayong"}, {thai: "สก", latin: "Sa Kaeo"}, {thai: "กจ", latin: "Kanchanaburi"}, {thai: "ตก", latin: "Tak"}, {thai: "ปข", latin: "Prachuap Khiri Khan"}, {thai: "พบ", latin: "Phetchaburi"}, {thai: "รบ", latin: "Ratchaburi"}, {thai: "กบ", latin: "Krabi"}, {thai: "ชพ", latin: "Chumphon"}, {thai: "ตง", latin: "Trang"}, {thai: "นศ", latin: "Nakhon Si Thammarat"}, {thai: "นธ", latin: "Narathiwat"}, {thai: "ปน", latin: "Pattani"}, {thai: "พง", latin: "Phangnga"}, {thai: "พท", latin: "Phatthalung"}, {thai: "ภก", latin: "Phuket"}, {thai: "ยล", latin: "Yala"}, {thai: "รน", latin: "Ranong"}, {thai: "สต", latin: "Satun"}, {thai: "สข", latin: "Songkhla"}, {thai: "สฎ", latin: "Surat Thani"}]
+let provincesAbb = [
+    {thai: "ชม", latin: "Chiang Mai"},
+    {thai: "นน", latin: "Nan"},
+    {thai: "พย", latin: "Phayao"},
+    {thai: "พร", latin: "Phrae"},
+    {thai: "มส", latin: "Mae Hong Son"},
+    {thai: "ลป", latin: "Lampang"},
+    {thai: "ลพ", latin: "Lamphun"},
+    {thai: "อต", latin: "Uttaradit"},
+    {thai: "กส", latin: "Kalasin"},
+    {thai: "ขก", latin: "Khon Kaen"},
+    {thai: "ชย", latin: "Chaiyaphum"},
+    {thai: "นพ", latin: "Nakhon Phanom"},
+    {thai: "นม", latin: "Nakhon Ratchasima"},
+    {thai: "บก", latin: "Bueng Kan"},
+    {thai: "บร", latin: "Buri Ram"},
+    {thai: "มค", latin: "Maha Sarakham"},
+    {thai: "มห", latin: "Mukdahan"},
+    {thai: "ยส", latin: "Yasothon"},
+    {thai: "รอ", latin: "Roi Et"},
+    {thai: "ลย", latin: "Loei"},
+    {thai: "ศก", latin: "Si Sa Ket"},
+    {thai: "สน", latin: "Sakon Nakhon"},
+    {thai: "สร", latin: "Surin"},
+    {thai: "นค", latin: "Nong Khai"},
+    {thai: "นภ", latin: "Nong Bua Lam Phu"},
+    {thai: "อด", latin: "Udon Thani"},
+    {thai: "อบ", latin: "Ubon Ratchathani"},
+    {thai: "อจ", latin: "Amnat Charoen"},
+    {thai: "กท", latin: "Bangkok"},
+    {thai: "กพ", latin: "Kamphaeng Phet"},
+    {thai: "ชน", latin: "Chai Nat"},
+    {thai: "นย", latin: "Nakhon Nayok"}, {thai: "นฐ", latin: "Nakhon Pathom"}, {thai: "นว", latin: "Nakhon Sawan"}, {thai: "นบ", latin: "Nonthaburi"}, {thai: "ปท", latin: "Pathum Thani"}, {thai: "อย", latin: "Phra Nakhon Si Ayutthaya"}, {thai: "พจ", latin: "Phichit"}, {thai: "พล", latin: "Phitsanulok"}, {thai: "พช", latin: "Phetchabun"}, {thai: "ลบ", latin: "Lop Buri"}, {thai: "สป", latin: "Samut Prakan"}, {thai: "สส", latin: "Samut Songkhram"}, {thai: "สค", latin: "Samut Sakhon"}, {thai: "สบ", latin: "Saraburi"}, {thai: "สห", latin: "Sing Buri"}, {thai: "สท", latin: "Sukhothai"}, {thai: "สพ", latin: "Suphan Buri"}, {thai: "อท", latin: "Ang Thong"}, {thai: "อน", latin: "Uthai Thani"}, {thai: "จบ", latin: "Chanthaburi"}, {thai: "ฉช", latin: "Chachoengsao"}, {thai: "ชบ", latin: "Chon Buri"}, {thai: "ตร", latin: "Trat"}, {thai: "ปจ", latin: "Prachin Buri"}, {thai: "รย", latin: "Rayong"}, {thai: "สก", latin: "Sa Kaeo"}, {thai: "กจ", latin: "Kanchanaburi"}, {thai: "ตก", latin: "Tak"}, {thai: "ปข", latin: "Prachuap Khiri Khan"}, {thai: "พบ", latin: "Phetchaburi"}, {thai: "รบ", latin: "Ratchaburi"}, {thai: "กบ", latin: "Krabi"}, {thai: "ชพ", latin: "Chumphon"}, {thai: "ตง", latin: "Trang"}, {thai: "นศ", latin: "Nakhon Si Thammarat"}, {thai: "นธ", latin: "Narathiwat"}, {thai: "ปน", latin: "Pattani"}, {thai: "พง", latin: "Phangnga"}, {thai: "พท", latin: "Phatthalung"}, {thai: "ภก", latin: "Phuket"}, {thai: "ยล", latin: "Yala"}, {thai: "รน", latin: "Ranong"}, {thai: "สต", latin: "Satun"}, {thai: "สข", latin: "Songkhla"}, {thai: "สฎ", latin: "Surat Thani"}]
 
 let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bangkok (Krung Thep Maha Nakhon)"},
     { thai: "อำนาจเจริญ", latin: "Amnatcharoen"},
