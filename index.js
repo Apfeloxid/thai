@@ -18,6 +18,10 @@ let buttonNext = document.querySelector("#buttonNext");
 buttonNext.addEventListener('click', () => showNext())
 let buttonAbbreviations = document.querySelector("#buttonAbbreviations");
 buttonAbbreviations.addEventListener('click', () => startQuiz(provincesAbb))
+let buttonLoopFont = document.querySelector("#buttonLoopFont")
+buttonLoopFont.addEventListener('click', () => toLoopFont())
+let buttonLooplessFont = document.querySelector("#buttonLooplessFont")
+buttonLooplessFont.addEventListener('click', () => toLooplessFont())
 
 let letters1 = [
     {
@@ -599,6 +603,25 @@ let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bang
 let currentRound = 0;
 
 let currentVocab = null
+let lastGamemodeButton = null
+
+function toLoopFont() {
+    let letterDisplay = document.querySelector('#letterDisplay');
+    letterDisplay.style.fontFamily = "'courier', sans-serif";
+    buttonLoopFont.style.color = "blue"
+    buttonLoopFont.style.border = "2px solid red"
+    buttonLooplessFont.style.color = "black"
+    buttonLooplessFont.style.border = "2px solid black"
+}
+
+function toLooplessFont() {
+    let letterDisplay = document.querySelector('#letterDisplay');
+    letterDisplay.style.fontFamily = "'Noto Sans Thai', sans-serif";
+    buttonLooplessFont.style.color = "blue"
+    buttonLooplessFont.style.border = "2px solid red"
+    buttonLoopFont.style.color = "black"
+    buttonLoopFont.style.border = "2px solid black"
+}
 
 function prepareConsonantQuiz() {
     let vocabs = letters1.filter(vocab => !vocab.isVowel);

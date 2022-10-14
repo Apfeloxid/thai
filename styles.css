@@ -17,6 +17,41 @@ main {
     align-items: center;
 }
 
+button {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 20px 10px 20px;
+    background: #fff;
+    color: black;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+/*
+
+#font-section button:focus {
+    color: blue;
+    border: 2px solid rgb(255, 0, 0);
+    box-shadow: 0 0 50px 20px rgb(255, 0, 0);
+    animation: anim-shadow 0.5s forwards;
+
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0);
+    }
+}*/
+
+#buttonLoopFont {
+    color: blue;
+    border: 2px solid rgb(255, 0, 0);
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0);
+}
+
 #gamemode-section {
     display: flex;
     flex-direction: row;
@@ -25,11 +60,6 @@ main {
     flex-wrap: wrap;
 }
 
-#gamemode-section button {
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 10px 20px 10px 20px;
-}
 
 #quiz-section {
     background: whitesmoke;
@@ -45,14 +75,11 @@ main {
 }
 
 #quiz-section button {
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 10px 20px 10px 20px;
+    border: 2px solid black;
 }
 
+
 #letterDisplay {
-    /*font-family: 'Noto Sans Thai', sans-serif;*/
     font-size: 150px;
     margin: 0;
 }
@@ -88,7 +115,7 @@ main {
         width: 100%;
     }
 
-    #gamemode-section button {
+    button {
         margin-top: 5px;
         margin-bottom: 5px;
         margin-right: 5px;
