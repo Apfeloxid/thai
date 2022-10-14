@@ -8,10 +8,13 @@ header {
 body {
     background: #202020;
     color: white;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #gamemode-section {
@@ -29,19 +32,16 @@ body {
 }
 
 #quiz-section {
-    position: absolute;
     background: whitesmoke;
     color: black;
     height: 500px;
     width: 1000px;
-    left: 50%;
-    top: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -40%);
+    margin-top: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    align-self: center;
 }
 
 #quiz-section button {
@@ -52,6 +52,7 @@ body {
 }
 
 #letterDisplay {
+    /*font-family: 'Noto Sans Thai', sans-serif;*/
     font-size: 150px;
     margin: 0;
 }
@@ -85,8 +86,6 @@ body {
     #quiz-section {
         height: 400px;
         width: 100%;
-        left: 0;
-        transform: translate(0, -30%);
     }
 
     #gamemode-section button {
