@@ -1,27 +1,30 @@
-let buttonStart1 = document.querySelector(`#buttonStart1`);
-buttonStart1.addEventListener("click", () => startQuiz(letters1));
-let buttonStart2 = document.querySelector(`#buttonStart2`);
-buttonStart2.addEventListener("click", () => startQuiz(letters2));
-let buttonStart3 = document.querySelector(`#buttonStart3`);
-buttonStart3.addEventListener("click", () => startQuiz(letters3));
-let buttonProvinces = document.querySelector(`#buttonProvinces`);
-buttonProvinces.addEventListener("click", () => startQuiz(provinces));
-let buttonConsonants = document.querySelector(`#buttonConsonants`);
-buttonConsonants.addEventListener("click", () => prepareConsonantQuiz())
-let buttonVowels = document.querySelector("#buttonVowels");
-buttonVowels.addEventListener("click", () => prepareVowelQuiz())
-let buttonAllLetters = document.querySelector("#buttonAll");
-buttonAllLetters.addEventListener("click", () => startQuiz(letters1.concat(letters2).concat(letters3)))
-let buttonShow = document.querySelector("#buttonShow");
-buttonShow.addEventListener('click', () => showAnswer())
-let buttonNext = document.querySelector("#buttonNext");
-buttonNext.addEventListener('click', () => showNext())
-let buttonAbbreviations = document.querySelector("#buttonAbbreviations");
-buttonAbbreviations.addEventListener('click', () => startQuiz(provincesAbb))
-let buttonLoopFont = document.querySelector("#buttonLoopFont")
-buttonLoopFont.addEventListener('click', () => toLoopFont())
-let buttonLooplessFont = document.querySelector("#buttonLooplessFont")
-buttonLooplessFont.addEventListener('click', () => toLooplessFont())
+document.querySelector("#buttonShow").addEventListener('click', () => showAnswer())
+document.querySelector("#buttonNext").addEventListener('click', () => showNext())
+document.querySelector("#buttonBengali").addEventListener('click', () => switchToBengali())
+document.querySelector("#buttonThai").addEventListener('click', () => switchToThai())
+
+let htmlBengali = `
+<div id=gamemode-section">
+    <button id="buttonConsonants">Consonants</button>
+    <button id="buttonDistricts">Districts</button>
+</div>
+`
+
+let htmlThai = `
+<div id="font-section">
+    <button id="buttonLoopFont">Font with loops</button>
+    <button id="buttonLooplessFont">Font without loops</button>
+</div>
+<div id="gamemode-section">
+    <button id="buttonStart1">Day 1</button>
+    <button id="buttonStart2">Day 2</button>
+    <button id="buttonStart3">Day 3</button>
+    <button id="buttonConsonants">All Consonants</button>
+    <button id="buttonVowels">All Vowels</button>
+    <button id="buttonAll">All Letters</button>
+    <button id="buttonProvinces">Provinces</button>
+    <button id="buttonAbbreviations">Abbreviations</button>
+</div>`
 
 let letters1 = [
     {
@@ -600,10 +603,108 @@ let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bang
     { thai: "ยโสธร", latin: "Yasothon"},
 ];
 
+let bengaliConsonants = [
+    {thai: "ঢ", latin: "DH"},
+    {thai: "ক", latin: "K"},
+    {thai: "ট", latin: "T"},
+    {thai: "স", latin: "S"},
+    {thai: "ল", latin: "L"},
+    {thai: "ম", latin: "M"},
+    {thai: "ব", latin: "B"},
+    {thai: "জ", latin: "J/Z"},
+    {thai: "গ", latin: "G"},
+    {thai: "হ", latin: "H"},
+    {thai: "ন", latin: "N"},
+    {thai: "য়", latin: "Y/A"},
+    {thai: "প", latin: "P"},
+    {thaii: "ণ", latin: "N"},
+    {thai: "শ", latin: "SH"},
+    {thai: "দ", latin: "D"},
+    {thai: "ড়", latin: "R"},
+    {thai: "ফ", latin: "PH/F"},
+    {thai: "ঠ", latin: "TH"},
+    {thai: "চ", latin: "CH"},
+    {thai: "খ", latin: "KH"},
+    {thai: "ড", latin: "D"},
+    {thai: "য", latin: "J"},
+    {thai: "ভ", latin: "BH/V"},
+    {thai: "ত", latin: "T"},
+    {thai: "ছ", latin: "CH"}
+]
+
+let banglaDistricts = [
+    {thai: "সিলেট", latin: "Sylhet"},
+    {thai: "মৌলভীবাজার", latin: "Moulvibazar"},
+    {thai: "হবিগঞ্জ", latin: "Habiganj"},
+    {thai: "সুনামগঞ্জ", latin: "S  Sunamganj"},
+    {thai: "ময়মনসিংহ", latin: "Mymensingh"},
+    {thai: "জামালপুর", latin: "Jamalpur"},
+    {thai: "নেত্রকোণা", latin: "Netrokona"},
+    {thai: "শেরপুর", latin: "Sherpur"},
+    {thai: "রংপুর", latin: "Rangpur"},
+    {thai: "দিনাজপুর", latin: "Dinajpur"},
+    {thai: "কুড়িগ্রাম", latin: "Kurigram"},
+    {thai: "গাইবান্ধা", latin: "Gaibandha"},
+    {thai: "লালমনিরহাট", latin: "Lalmonirhat"},
+    {thai: "নীলফামারী", latin: "Nilphamari"},
+    {thai: "পঞ্চগড়", latin: "Panchagarh"},
+    {thai: "ঠাকুরগাঁও", latin: "Thakurgaon"},
+    {thai: "রাজশাহ   হী", latin: "Rajshahi"},
+    {thai: "বগুড়া", latin: "Bogura"},
+    {thai: "জয়পুরহাট", latin: "Jaipurhat"},
+    {thai: "নওগাঁ", latin: "Naogaon"},
+    {thai: "নাটোর", latin: "Natore"},
+    {thai: "চাঁপাইনবাবগঞ্জ", latin: "Chapai Nawabganj"},
+    {thai: "পাবনা", latin: "Pabna"},
+    {thai: "সিরাজগঞ্জ", latin: "Sirajganj"},
+    {thai: "খুলনা", latin: "Khulna"},
+    {thai: "বাগেরহাট", latin: "Bagerhat"},
+    {thai: "চুয়াডাঙ্গা", latin: "Chuadanga"},
+    {thai: "যশোর", latin: "Jashore"},
+    {thai: "ঝিনাইদহ", latin: "Jhenaidah"},
+    {thai: "কুষ্টিয়া", latin: "Kushtia"},
+    {thai: "মাগুরা", latin: "Magura"},
+    {thai: "মেহেরপুর", latin: "Meherpur"},
+    {thai: "নড়াইল", latin: "Narail"},
+    {thai: "সাতক্ষীরা", latin: "Satkhira"},
+    {thai: "বরিশাল", latin: "Barishal"},
+    {thai: "বরগুনা", latin: "Barguna"},
+    {thai: "ভোলা", latin: "Bhola"},
+    {thai: "ঝালকাঠি", latin: "Jhalokathi"},
+    {thai: "পটুয়াখালী", latin: "Patuakhali"},
+    {thai: "পিরোজপুর", latin: "Pirojpur"},
+    {thai: "ঢাকা", latin: "Dhaka"},
+    {thai: "ফরিদপুর", latin: "Faridpur"},
+    {thai: "গাজীপুর", latin: "Gazipur"},
+    {thai: "গোপালগঞ্জ", latin: "Gopalganj"},
+    {thai: "কিশোরগঞ্জ", latin: "Kishoreganj"},
+    {thai: "মাদারিপুর", latin: "Madaripur"},
+    {thai: "মানিকগঞ্জ", latin: "Manikganj"},
+    {thai: "মুন্সিগঞ্জ", latin: "Munshiganj"},
+    {thai: "নারায়ণগঞ্জ", latin: "Narayanganj"},
+    {thai: "নরসিংদী", latin: "Narsingdi"},
+    {thai: "রাজবাড়ী", latin: "Rajbari"},
+    {thai: "শরিয়তপুর", latin: "Shariatpur"},
+    {thai: "টাঙ্গাইল", latin: "Tangail"},
+    {thai: "চট্টগ্রাম", latin: "Chattagram"},
+    {thai: "বান্দরবান", latin: "Bandarban"},
+    {thai: "ব্রাহ্মণবাড়িয়া", latin: "Brahmanbaria"},
+    {thai: "চাঁদপুর", latin: "Chandpur"},
+    {thai: "কক্সবাজার", latin: "Cox's Bazar"},
+    {thai: "ফেনী", latin: "Feni"},
+    {thai: "খাগড়াছড়ি", latin: "Khagrachhari"},
+    {thai: "কুমিল্লা", latin: "Cumilla"},
+    {thai: "লক্ষ্মীপুর", latin: "Lakshmipur"},
+    {thai: "নোয়াখালী", latin: "Noakhali"},
+    {thai: "রাঙ্গামাটি", latin: "Rangamati"}
+]
+
 let currentRound = 0;
 
 let currentVocab = null
 let lastGamemodeButton = null
+
+switchToThai();
 
 function toLoopFont() {
     let letterDisplay = document.querySelector('#letterDisplay');
@@ -635,6 +736,19 @@ function prepareVowelQuiz() {
     vocabs = vocabs.concat(letters2.filter(vocab => vocab.isVowel));
     vocabs = vocabs.concat(letters3.filter(vocab => vocab.isVowel));
     startQuiz(vocabs)
+}
+
+function clearQuiz() {
+    let letterDisplay = document.querySelector('#letterDisplay');
+    let answerDisplay = document.querySelector('#answerDisplay');
+    let noteDisplay = document.querySelector('#noteDisplay')
+
+    answerDisplay.innerText = '';
+    noteDisplay.innerText = '';
+    letterDisplay.innerText = '';
+    
+    buttonNext.style.display="None"
+    buttonShow.style.display="None"
 }
 
 function startQuiz(vocab) {
@@ -674,4 +788,27 @@ function showAnswer() {
     buttonShow.style.display="None";
     buttonNext.style.display="Inline";
     currentRound++;
+}
+
+function switchToBengali() {
+    clearQuiz();
+    document.querySelector("#language-quiz").innerHTML = htmlBengali;
+    document.querySelector("#buttonConsonants").addEventListener("click", () => startQuiz(bengaliConsonants));
+    document.querySelector("#buttonDistricts").addEventListener("click", () => startQuiz(banglaDistricts));
+}
+
+function switchToThai() {
+    clearQuiz();
+    document.querySelector("#language-quiz").innerHTML = htmlThai;
+    document.querySelector(`#buttonStart1`).addEventListener("click", () => startQuiz(letters1));
+    document.querySelector(`#buttonStart2`).addEventListener("click", () => startQuiz(letters2));
+    document.querySelector(`#buttonStart3`).addEventListener("click", () => startQuiz(letters3));
+    document.querySelector(`#buttonProvinces`).addEventListener("click", () => startQuiz(provinces));
+    document.querySelector(`#buttonConsonants`).addEventListener("click", () => prepareConsonantQuiz())
+    document.querySelector("#buttonVowels").addEventListener("click", () => prepareVowelQuiz())
+    document.querySelector("#buttonAll").addEventListener("click", () => startQuiz(letters1.concat(letters2).concat(letters3)))
+    document.querySelector("#buttonAbbreviations").addEventListener('click', () => startQuiz(provincesAbb))
+    document.querySelector("#buttonLoopFont").addEventListener('click', () => toLoopFont())
+    document.querySelector("#buttonLooplessFont").addEventListener('click', () => toLooplessFont())
+    toLoopFont()
 }
