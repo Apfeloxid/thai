@@ -629,7 +629,8 @@ let bengaliConsonants = [
     {thai: "য", latin: "J"},
     {thai: "ভ", latin: "BH/V"},
     {thai: "ত", latin: "T"},
-    {thai: "ছ", latin: "CH"}
+    {thai: "ছ", latin: "CH"},
+    {thai: "র", latin: "R"}
 ]
 
 let banglaDistricts = [
