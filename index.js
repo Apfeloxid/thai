@@ -617,7 +617,7 @@ let bengaliConsonants = [
     {thai: "ন", latin: "N"},
     {thai: "য়", latin: "Y/A"},
     {thai: "প", latin: "P"},
-    {thaii: "ণ", latin: "N"},
+    {thai: "ণ", latin: "N"},
     {thai: "শ", latin: "SH"},
     {thai: "দ", latin: "D"},
     {thai: "ড়", latin: "R"},
