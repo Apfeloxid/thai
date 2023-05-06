@@ -707,6 +707,20 @@ let lastGamemodeButton = null
 
 switchToThai();
 
+document.body.onkeyup = function(e) {
+    if (e.key == " " ||
+        e.code == "Space" ||      
+        e.keyCode == 32      
+    ) {
+        e.preventDefault();
+        if (buttonNext.style.display != "none") {
+            showNext();
+        } else if (buttonShow.style.display != "none") {
+            showAnswer();
+        }
+    }
+  }
+
 function toLoopFont() {
     let letterDisplay = document.querySelector('#letterDisplay');
     letterDisplay.style.fontFamily = "'courier', sans-serif";
