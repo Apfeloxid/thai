@@ -1,5 +1,5 @@
 header {
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@ button {
 #quiz-section {
     background: whitesmoke;
     color: black;
-    height: 500px;
+    height: 450px;
     width: 1000px;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -85,6 +85,8 @@ button {
 
 #quiz-section button {
     border: 2px solid black;
+    align-self: center;
+    width: 150px;
 }
 
 
@@ -112,6 +114,20 @@ button {
 
 #noteDisplay {
     font-size: 20px;
+}
+
+#bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.small-display {
+    font-size: 30px;
+    margin-right: 45px;
+    margin-left: 45px;
+    width: 50px;
 }
 
 @media screen and (max-width: 1000px) {

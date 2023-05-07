@@ -26,6 +26,7 @@ let htmlThai = `
     <button id="buttonAbbreviations">Abbreviations</button>
 </div>`
 
+//thai
 let letters1 = [
     {
         thai: 'ม',
@@ -523,8 +524,10 @@ let provincesAbb = [
     {thai: "รน", latin: "Ranong"},
     {thai: "สต", latin: "Satun"},
     {thai: "สข", latin: "Songkhla"},
-    {thai: "สฎ", latin: "Surat Thani"}]
-let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bangkok (Krung Thep Maha Nakhon)"},
+    {thai: "สฎ", latin: "Surat Thani"}
+]
+let provinces = [
+    { thai: "กรุงเทพมหานคร", latin: "Bangkok (Krung Thep Maha Nakhon)"},
     { thai: "อำนาจเจริญ", latin: "Amnatcharoen"},
     { thai: "อ่างทอง", latin: "Ang Thong"},
     { thai: "บึงกาฬ", latin: "Bueng Kan"},
@@ -603,6 +606,7 @@ let provinces = [{ thai: "กรุงเทพมหานคร", latin: "Bang
     { thai: "ยโสธร", latin: "Yasothon"},
 ];
 
+//bengali
 let bengaliConsonants = [
     {thai: "ঢ", latin: "DH"},
     {thai: "ক", latin: "K"},
@@ -632,7 +636,6 @@ let bengaliConsonants = [
     {thai: "ছ", latin: "CH"},
     {thai: "র", latin: "R"}
 ]
-
 let banglaDistricts = [
     {thai: "সিলেট", latin: "Sylhet"},
     {thai: "মৌলভীবাজার", latin: "Moulvibazar"},
@@ -756,11 +759,13 @@ function prepareVowelQuiz() {
 function clearQuiz() {
     let letterDisplay = document.querySelector('#letterDisplay');
     let answerDisplay = document.querySelector('#answerDisplay');
-    let noteDisplay = document.querySelector('#noteDisplay')
+    let noteDisplay = document.querySelector('#noteDisplay');
+    let bottomRightDisplay = document.querySelector('#right-display');
 
     answerDisplay.innerText = '';
     noteDisplay.innerText = '';
     letterDisplay.innerText = '';
+    bottomRightDisplay.innerText = '';
     
     buttonNext.style.display="None"
     buttonShow.style.display="None"
@@ -779,16 +784,21 @@ function showNext() {
     let answerDisplay = document.querySelector('#answerDisplay');
     let noteDisplay = document.querySelector('#noteDisplay')
 
+    let bottomRightDisplay = document.querySelector('#right-display');
+
+
     answerDisplay.innerText = '';
     noteDisplay.innerText = '';
     buttonNext.style.display="None"
 
     if (currentRound >= currentVocab.length) {
         letterDisplay.innerText = 'Done'
+        bottomRightDisplay.innerText = '';
         return
     }
 
     letterDisplay.innerText = currentVocab[currentRound].thai
+    bottomRightDisplay.innerText = (currentRound+1) + "/" + currentVocab.length;
 
     buttonShow.style.display="Inline";
 }
